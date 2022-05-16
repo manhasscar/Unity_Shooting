@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 342}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 145
+  controlID: 96
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,8 +146,8 @@ MonoBehaviour:
     y: 734
     width: 1450
     height: 213
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 680, y: 342}
   m_MaxSize: {x: 12005, y: 8042}
   vertical: 1
-  controlID: 146
+  controlID: 97
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_MinSize: {x: 680, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 147
+  controlID: 98
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -468,21 +468,21 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\yourn\OneDrive\Desktop\Unity_Shooting
+  m_LastProjectPath: C:\Users\yourn\OneDrive\Desktop\unity_capstone\Unity_Shooting
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cc450000
-    m_LastClickedID: 17868
+    m_SelectedIDs: ce450000
+    m_LastClickedID: 17870
     m_ExpandedIDs: 00000000ae450000b0450000b2450000b4450000b6450000b8450000ba45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

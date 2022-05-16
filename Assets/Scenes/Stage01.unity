@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 842ed45c65544d345aee3fcaf4e66ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 300
+  maxHP: 500
 --- !u!1 &399231665
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   panelBossHP: {fileID: 1226949950}
   boss: {fileID: 342617528}
   spawnTime: 0.35
-  maxEnemyCount: 5
+  maxEnemyCount: 10
 --- !u!4 &399231667
 Transform:
   m_ObjectHideFlags: 0
