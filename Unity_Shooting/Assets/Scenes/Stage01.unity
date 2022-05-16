@@ -379,7 +379,7 @@ MonoBehaviour:
   stageData: {fileID: 11400000, guid: ad1ab9e198a25b74e92884c3ff327083, type: 2}
   explosionPrefab: {fileID: 4943838153431159649, guid: 94dab163c225cdb408a2897529b2ba02, type: 3}
   playerController: {fileID: 1494290070}
-  nextSceneName: 
+  nextSceneName: GameClear
   bossAppearPoint: 2.5
   movement2D: {fileID: 0}
 --- !u!114 &342617534
