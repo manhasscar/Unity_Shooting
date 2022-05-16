@@ -17,5 +17,12 @@ public class Projectile : MonoBehaviour
             //발사체 삭제
             Destroy(gameObject);
         }
+        else if ( collision.CompareTag("Boss"))
+        {
+            // 부딪힌 오브젝트 체력 감소 (보스)
+            collision.GetComponent<BossHP>().TakeDamage(damage);
+            // 내 오브젝트 삭제 (발사체)
+            Destroy (gameObject);
+        }
     }
 }
