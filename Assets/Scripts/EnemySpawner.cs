@@ -24,7 +24,8 @@ public class EnemySpawner : MonoBehaviour
     private float spawnTime; // 생성되는 주기
     [SerializeField]
     private int maxEnemyCount = 100;  //현재 스테이지의 최대 적 생성 숫자
-
+    [SerializeField]
+    private BackGroundCont[] backGroundcont;
 
     private void Awake()
     {
@@ -59,6 +60,18 @@ public class EnemySpawner : MonoBehaviour
                 //적을 최대 숫자까지 생성하면 적 생성 코루틴 중지, 보스 생성 코루틴 실행
                 if ( currentEnemyCount == maxEnemyCount )
                 {
+                    //배경 그라데이션 등장
+                    backGroundcont[2].FadeOutBG();
+                    backGroundcont[3].FadeOutBG();
+                    backGroundcont[0].FadeInBG();
+                    backGroundcont[1].FadeInBG();
+                    yield return new WaitForSeconds(5.0f);
+                    backGroundcont[2].sprite.sprite = backGroundcont[4].sprite.sprite;
+                    backGroundcont[3].sprite.sprite = backGroundcont[4].sprite.sprite;            
+                                       
+                    backGroundcont[2].FadeInBG();
+                    backGroundcont[3].FadeInBG();
+                  
                     StartCoroutine("SpawnBoss");
                     break;
                 }
@@ -91,11 +104,14 @@ public class EnemySpawner : MonoBehaviour
     {
         // 보스 등장 BGM 설정
         bgmController.ChangeBGM(BGMType.Boss); //가독성좋음
+
+        yield return new WaitForSeconds(7.0f);
+
         // 보스 등장 텍스트 활성화
         textBossWarnig.SetActive(true);
 
-        // 1초 대기
-        yield return new WaitForSeconds(1.0f);
+        // 3초 대기
+        yield return new WaitForSeconds(3.0f);
 
         //보스 등장 텍스트 비활성화
         textBossWarnig.SetActive(false);
