@@ -26,6 +26,8 @@ public class EnemySpawner : MonoBehaviour
     private int maxEnemyCount = 100;  //현재 스테이지의 최대 적 생성 숫자
     [SerializeField]
     private BackGroundCont[] backGroundcont;
+    [SerializeField]
+    private ConverCon[] converCon;
 
     private void Awake()
     {
@@ -71,7 +73,14 @@ public class EnemySpawner : MonoBehaviour
                                        
                     backGroundcont[2].FadeInBG();
                     backGroundcont[3].FadeInBG();
-                  
+
+                    converCon[0].AppearBox();
+                    yield return new WaitForSeconds(3.0f);
+                    converCon[0].sprite.sprite = converCon[1].sprite.sprite;
+                    yield return new WaitForSeconds(3.0f);
+                    converCon[0].DisAppearBox();
+
+
                     StartCoroutine("SpawnBoss");
                     break;
                 }
@@ -105,7 +114,7 @@ public class EnemySpawner : MonoBehaviour
         // 보스 등장 BGM 설정
         bgmController.ChangeBGM(BGMType.Boss); //가독성좋음
 
-        yield return new WaitForSeconds(7.0f);
+        yield return new WaitForSeconds(3.0f);
 
         // 보스 등장 텍스트 활성화
         textBossWarnig.SetActive(true);

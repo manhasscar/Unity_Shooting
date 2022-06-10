@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4854442959039709044, guid: 1c3c226d2662f9348b46ed4ce47b1f96, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10750166a8f256c479ad8cc92cb0b619, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   boomAudio: {fileID: 8300000, guid: c401d00c96b512e488d2e3bf5d111509, type: 3}
+  damage: 50
 --- !u!82 &4990357039886234277
 AudioSource:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class BossHP : MonoBehaviour
         if ( currentHP <= 0)
         {
             // 체력이 0이면 OnDie() 함수를 호출해서 죽었을 때 처리를 한다
-            boss.OnDie();
+            boss.StartCoroutine("BossEnd");
         }
     }    
 

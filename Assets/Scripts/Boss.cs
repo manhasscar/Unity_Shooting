@@ -20,6 +20,8 @@ public class Boss : MonoBehaviour
     public Movement2D movement2D;
     private BossWeapon bossWeapon;
     private BossHP bossHP;
+    [SerializeField]
+    private ConverCon[] converCon;
 
 
     private void Awake()
@@ -73,6 +75,11 @@ public class Boss : MonoBehaviour
             {
                 // 웒 방사 형태의 공격 중지
                 bossWeapon.StopFiring(AttackType.CircleFire);
+                converCon[2].AppearBox();
+                yield return new WaitForSeconds(3.0f);
+                converCon[2].sprite.sprite = converCon[3].sprite.sprite;
+                yield return new WaitForSeconds(3.0f);
+                converCon[2].DisAppearBox();
                 // Phase02로 변경
                 ChangeState(BossState.Phase02);
             }
@@ -140,10 +147,36 @@ public class Boss : MonoBehaviour
 
     public void OnDie()
     {
+        
+
         // 보스 파괴 파티클 생성
         GameObject clone = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         clone.GetComponent<BossExplosion>().Setup(playerController, nextSceneName);
         // 보스 오브젝트 삭제
         Destroy(gameObject);
     }
+
+    private IEnumerator BossEnd()
+    {
+        movement2D.MoveTo(Vector3.zero);
+        bossWeapon.StopFiring(AttackType.CircleFire);
+        
+        bossWeapon.StopFiring(AttackType.SingleFireToCenterPosition);
+        
+
+        converCon[0].AppearBox();
+        yield return new WaitForSeconds(2.0f);
+        converCon[0].sprite.sprite = converCon[1].sprite.sprite;
+        yield return new WaitForSeconds(2.0f);
+        converCon[0].DisAppearBox();
+
+
+        GameObject clone = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        clone.GetComponent<BossExplosion>().Setup(playerController, nextSceneName);
+        Destroy(gameObject);
+        // 보스 오브젝트 삭제
+
+
+    }
+
 }
