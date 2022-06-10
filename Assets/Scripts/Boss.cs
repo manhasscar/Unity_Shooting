@@ -22,14 +22,16 @@ public class Boss : MonoBehaviour
     private BossHP bossHP;
     [SerializeField]
     private ConverCon[] converCon;
-
+    private PolygonCollider2D bosscol;
+    
 
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
         bossWeapon = GetComponent<BossWeapon>();
         bossHP = GetComponent<BossHP>();
-
+        bosscol = GetComponent<PolygonCollider2D>();
+        
     }
 
     public void ChangeState(BossState newState)
@@ -75,11 +77,14 @@ public class Boss : MonoBehaviour
             {
                 // 웒 방사 형태의 공격 중지
                 bossWeapon.StopFiring(AttackType.CircleFire);
+                bosscol.enabled = false;
                 converCon[2].AppearBox();
                 yield return new WaitForSeconds(3.0f);
                 converCon[2].sprite.sprite = converCon[3].sprite.sprite;
                 yield return new WaitForSeconds(3.0f);
                 converCon[2].DisAppearBox();
+                bosscol.enabled = true;
+
                 // Phase02로 변경
                 ChangeState(BossState.Phase02);
             }
