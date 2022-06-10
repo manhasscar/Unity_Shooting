@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: bb17421e166a0dc4791d3c72fed36096
+  - enabled: 1
+    path: Assets/Scenes/GameRank.unity
+    guid: 50d536454c16dfd4f96258c4acf00014
   m_configObjects: {}
